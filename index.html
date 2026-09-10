@@ -8,38 +8,101 @@
   <meta name="description" content="Contratação em Portugal para restauração, hotelaria e construção civil. Passaporte, visto e alojamento suportados." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f5c3a'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='11' font-family='Arial' font-weight='800' fill='white'%3ERP%3C/text%3E%3C/svg%3E" />
   <style>
-    :root { --green:#0f5c3a; --gold:#e8c547; --cta:#d32f2f; --cta-hover:#b71c1c; --cream:#f6f3ea; --mint:#eaf3ea; --bar:#e4efe6; --bar-fill:#b7d8c0; --ink:#1a1a1a; --muted:#666; --white:#fff; }
+    :root {
+      --green: #0f5c3a;
+      --gold: #e8c547;
+      --cta: #d32f2f;
+      --cta-hover: #b71c1c;
+      --cream: #f6f3ea;
+      --mint: #eaf3ea;
+      --bar: #e4efe6;
+      --bar-fill: #b7d8c0;
+      --ink: #1a1a1a;
+      --muted: #666;
+      --white: #fff;
+    }
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
-    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: var(--ink); background: var(--white); }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+    }
     button { font-family: inherit; cursor: pointer; }
     .hidden { display: none !important; }
-    header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 20px; background: #fff; border-bottom: 1px solid rgba(0,0,0,.05); }
-    .logo { width: 40px; height: 40px; border-radius: 12px; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 14px 20px;
+      background: #fff; border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: var(--green); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800;
+    }
     header strong { display: block; font-size: 15px; }
     header small { color: var(--muted); font-size: 12px; }
-    .hero { min-height: 680px; padding: 64px 20px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; background-image: linear-gradient(180deg, rgba(10,20,30,.38) 0%, rgba(247,244,236,.12) 70%, #f7f4ec 100%), url("https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1920&q=80"); background-size: cover; background-position: center; }
-    .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--green); border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+    .hero {
+      min-height: 680px; padding: 64px 20px 40px;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; color: #fff;
+      background-image:
+        linear-gradient(180deg, rgba(10,20,30,.38) 0%, rgba(247,244,236,.12) 70%, #f7f4ec 100%),
+        url("https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover; background-position: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green); border-radius: 999px;
+      padding: 6px 14px; font-size: 13px; font-weight: 600; margin-bottom: 20px;
+    }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: #7dff9a; }
-    h1.hero-h { max-width: 900px; margin: 0; font-size: 32px; line-height: 1.15; font-weight: 800; text-shadow: 0 2px 12px rgba(0,0,0,.25); }
+    h1.hero-h {
+      max-width: 900px; margin: 0;
+      font-size: 32px; line-height: 1.15; font-weight: 800;
+      text-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
     .gold { color: var(--gold); }
-    .hero p.lead { max-width: 640px; margin: 18px auto 28px; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.9); }
+    .hero p.lead {
+      max-width: 640px; margin: 18px auto 28px;
+      font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.9);
+    }
     .benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 26px; }
-    .benefit { width: 160px; background: #fff; color: var(--ink); border-radius: 14px; padding: 18px 10px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .benefit {
+      width: 160px; background: #fff; color: var(--ink);
+      border-radius: 14px; padding: 18px 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
     .benefit svg { width: 24px; height: 24px; color: var(--green); }
     .benefit b { display: block; margin-top: 6px; font-size: 14px; }
     .benefit small { color: var(--green); font-size: 12px; }
-    .cta { background: var(--cta); color: #fff; border: 0; border-radius: 14px; padding: 16px 56px; font-size: 18px; font-weight: 700; box-shadow: 0 10px 24px rgba(211,47,47,.35); }
+    .cta {
+      background: var(--cta); color: #fff; border: 0;
+      border-radius: 14px; padding: 16px 56px;
+      font-size: 18px; font-weight: 700;
+      box-shadow: 0 10px 24px rgba(211,47,47,.35);
+    }
     .cta:hover { background: var(--cta-hover); }
     .hero .note { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.85); }
     .stats-wrap { display: flex; justify-content: center; padding: 0 16px; margin-top: -20px; }
-    .stats { width: 100%; max-width: 672px; background: #fff; border-radius: 16px; padding: 22px 28px; display: flex; flex-direction: column; gap: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .stats {
+      width: 100%; max-width: 672px; background: #fff;
+      border-radius: 16px; padding: 22px 28px;
+      display: flex; flex-direction: column; gap: 16px;
+      text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
     .stats b { display: block; font-size: 32px; color: var(--green); }
     .stats span { font-size: 13px; color: var(--muted); }
     .jobs { background: #fff; padding: 64px 20px 80px; text-align: center; }
     .jobs h2 { font-size: 28px; margin: 0 0 28px; }
-    .job-grid { max-width: 880px; margin: 0 auto 36px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .job-grid {
+      max-width: 880px; margin: 0 auto 36px;
+      display: grid; grid-template-columns: 1fr; gap: 12px;
+    }
     .job { background: #f5f5f5; border-radius: 14px; padding: 16px 18px; text-align: left; font-weight: 500; }
     footer { background: var(--mint); padding: 18px; text-align: center; font-size: 12px; letter-spacing: .04em; color: var(--muted); }
     .quiz { min-height: calc(100vh - 72px); background: var(--cream); }
@@ -48,13 +111,22 @@
     .bar i { display: block; height: 100%; background: var(--bar-fill); width: 20%; transition: width .2s; }
     .etapa { font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
     .quiz h1 { font-size: 32px; font-weight: 800; margin: 0 0 22px; }
-    .opt { width: 100%; margin-bottom: 12px; min-height: 44px; background: #fff; border: 0; border-radius: 14px; padding: 18px 20px; text-align: left; font-size: 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+    .opt {
+      width: 100%; margin-bottom: 12px; min-height: 44px;
+      background: #fff; border: 0; border-radius: 14px;
+      padding: 18px 20px; text-align: left; font-size: 16px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.04);
+    }
     .opt:hover { box-shadow: 0 0 0 2px rgba(15,92,58,.2); }
     .vsl { min-height: calc(100vh - 72px); background: var(--cream); padding: 32px 12px 64px; display: flex; flex-direction: column; align-items: center; }
     .vsl h1 { max-width: 820px; text-align: center; font-size: 22px; line-height: 1.3; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 20px; }
     .vsl-box { width: 100%; max-width: 640px; }
     .live-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 8px; }
-    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cta); color: #fff; border-radius: 6px; padding: 2px 8px; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--cta); color: #fff; border-radius: 6px;
+      padding: 2px 8px; font-size: 12px; font-weight: 700; letter-spacing: .04em;
+    }
     .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; animation: live-pulse 1.6s ease-in-out infinite; }
     .live-muted { font-size: 14px; color: var(--muted); }
     .player-wrap { position: relative; overflow: hidden; border-radius: 16px; background: #000; box-shadow: 0 20px 50px rgba(0,0,0,.18); }
@@ -63,7 +135,11 @@
     .activity .live-dot { background: var(--cta); }
     .comments { margin-top: 12px; background: #fff; border-radius: 14px; padding: 8px 12px; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
     .comment { display: flex; gap: 10px; text-align: left; margin: 12px 0; animation: live-comment-in .28s ease-out; }
-    .av { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 600; }
+    .av {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 12px; font-weight: 600;
+    }
     .comment b { display: block; font-size: 14px; }
     .comment p { margin: 2px 0 0; font-size: 14px; line-height: 1.35; }
     .comment time { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
@@ -75,10 +151,21 @@
     .floats span { position: absolute; bottom: 0; font-size: 18px; animation: live-float-up 2.4s ease-out forwards; }
     @keyframes live-pulse { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:.45; transform:scale(.75);} }
     @keyframes live-comment-in { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
-    @keyframes live-float-up { 0% { opacity:0; transform:translateY(0) scale(.7); } 12% { opacity:1; transform:translateY(-10px) scale(1); } 100% { opacity:0; transform:translateY(-78px) scale(1.08); } }
+    @keyframes live-float-up {
+      0% { opacity:0; transform:translateY(0) scale(.7); }
+      12% { opacity:1; transform:translateY(-10px) scale(1); }
+      100% { opacity:0; transform:translateY(-78px) scale(1.08); }
+    }
     @keyframes live-type { 0%,80%,100% { opacity:.25; transform:none;} 40% { opacity:1; transform:translateY(-2px);} }
-    @media (min-width: 640px) { h1.hero-h { font-size: 48px; } .stats { flex-direction: row; justify-content: space-around; gap: 40px; padding: 22px 48px; } .job-grid { grid-template-columns: 1fr 1fr; } .vsl h1 { font-size: 34px; } }
-    @media (prefers-reduced-motion: reduce) { .live-dot, .comment, .floats span, .td { animation: none; } }
+    @media (min-width: 640px) {
+      h1.hero-h { font-size: 48px; }
+      .stats { flex-direction: row; justify-content: space-around; gap: 40px; padding: 22px 48px; }
+      .job-grid { grid-template-columns: 1fr 1fr; }
+      .vsl h1 { font-size: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .live-dot, .comment, .floats span, .td { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -89,26 +176,43 @@
       <small>Recrutamento internacional</small>
     </div>
   </header>
+
   <main id="home">
     <section class="hero">
       <div class="badge"><span class="dot"></span> Contratação aberta · 2026</div>
       <h1 class="hero-h">Estamos a contratar em<br>Portugal para <span class="gold">restauração,</span><br><span class="gold">hotelaria e construção civil</span></h1>
       <p class="lead">A empresa suporta os custos do processo: <strong>passaporte</strong>, <strong>visto de trabalho</strong> e <strong>alojamento</strong> em Portugal. Responda ao teste rápido de 5 etapas e veja a sua percentagem de aprovação.</p>
       <div class="benefits">
-        <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 14.5-4 16 0"/></svg><b>Passaporte</b><small>pago</small></div>
-        <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><b>Visto</b><small>pago</small></div>
-        <div class="benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M3 11h18"/><path d="M8 7V4h8v3"/></svg><b>Alojamento</b><small>incluído</small></div>
+        <div class="benefit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 14.5-4 16 0"/></svg>
+          <b>Passaporte</b><small>pago</small>
+        </div>
+        <div class="benefit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+          <b>Visto</b><small>pago</small>
+        </div>
+        <div class="benefit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/><path d="M3 11h18"/><path d="M8 7V4h8v3"/></svg>
+          <b>Alojamento</b><small>incluído</small>
+        </div>
       </div>
       <button class="cta" type="button" data-start>Começar candidatura</button>
       <p class="note">Vagas limitadas · resposta imediata</p>
     </section>
-    <div class="stats-wrap"><div class="stats"><div><b>+2.400</b><span>contratações</span></div><div><b>12</b><span>setores</span></div><div><b>100%</b><span>processo legal</span></div></div></div>
+    <div class="stats-wrap">
+      <div class="stats">
+        <div><b>+2.400</b><span>contratações</span></div>
+        <div><b>12</b><span>setores</span></div>
+        <div><b>100%</b><span>processo legal</span></div>
+      </div>
+    </div>
     <section class="jobs">
       <h2>Funções disponíveis neste momento</h2>
       <div class="job-grid" id="jobs"></div>
       <button class="cta" type="button" data-start>Começar candidatura</button>
     </section>
   </main>
+
   <section id="quiz" class="quiz hidden">
     <div class="quiz-inner">
       <div class="bar"><i id="bar"></i></div>
@@ -117,6 +221,7 @@
       <div id="opts"></div>
     </div>
   </section>
+
   <section id="vsl" class="vsl hidden">
     <h1>A empresa paga passagem, visto e hospedagem</h1>
     <div class="vsl-box">
@@ -125,7 +230,7 @@
         <span class="live-muted" id="viewers">245+ a assistir agora</span>
       </div>
       <div class="player-wrap">
-        <vturb-smartplayer id="vid-6a8fce5172922487a89d38af" style="display:block;margin:0 auto;width:100%">
+        <vturb-smartplayer id="vid-6aa1e3210d0f62a71631e344" style="display:block;margin:0 auto;width:100%">
           <div class="vturb-player-placeholder" style="position:relative;width:100%;padding:57.05229793977813% 0 0;z-index:0;background-color:black"></div>
         </vturb-smartplayer>
         <div class="floats" id="floats"></div>
@@ -144,9 +249,15 @@
       </div>
     </div>
   </section>
+
   <footer>ROTA PORTUGAL · Direitos reservados 2026</footer>
+
   <script>
-    const JOBS = ["Limpeza e higiene","Restauração (cozinha / mesa)","Hotelaria","Construção civil","Fábrica / produção","Armazém e logística","Escritório / apoio administrativo","Lavandaria industrial","Agricultura / estufas","Fábrica de papel"];
+    const JOBS = [
+      "Limpeza e higiene","Restauração (cozinha / mesa)","Hotelaria","Construção civil",
+      "Fábrica / produção","Armazém e logística","Escritório / apoio administrativo",
+      "Lavandaria industrial","Agricultura / estufas","Fábrica de papel"
+    ];
     const STEPS = [
       { q:"Qual é a sua idade?", opts:["18 a 25 anos","26 a 39 anos","40 a 55 anos","Mais de 55 anos"] },
       { q:"Em que país vive neste momento?", opts:["Moçambique","Angola","Brasil","Outro país africano","Outro"] },
@@ -160,7 +271,7 @@
       { name:"Fatima Joaquim", initials:"FJ", hue:28, text:"Sai de Maputo há 3 semanas. Alojamento já estava à espera. Assiste até ao fim, é agora ou nunca.", liked:true },
       { name:"Paulo Sitoe", initials:"PS", hue:265, text:"Para quem diz que é golpe: estou no Porto, a trabalhar. A empresa pagou TUDO. Acordem." },
       { name:"Ilda N.", initials:"IN", hue:340, text:"Eu também pensei que era mentira. Hoje falo de Portugal. Passagem paga. Visto pago. Casa paga." },
-      { name:"Nelson Cossa", initials:"NC", hue:18, text:"Quem está a assistir e não se candidata está a dormir na oportunidade" },
+      { name:"Nelson Cossa", initials:"NC", hue:18, text:"Quem está a assistir e não se candidata está a dormir na oportunidade 👀" },
       { name:"Mariana D.", initials:"MD", hue:195, text:"Consegui. Directamente de Faro. A empresa tratou de tudo. Não esperem 2027." },
       { name:"Helder Bila", initials:"HB", hue:88, text:"Eu estava sem passaporte. Eles pagaram. Agora estou cá. Quem quer, corre.", liked:true },
       { name:"Rosa Alberto", initials:"RA", hue:12, text:"Deixem de ter medo. Eu consegui. Falo de Portugal neste momento. A empresa pagou tudo mesmo." },
@@ -175,9 +286,11 @@
       { name:"Kelvin Chongo", initials:"KC", hue:200, text:"Quem quer hotelaria ou obra, isto é a porta. Eu entrei. Falo de Portugal, não de sonho." }
     ];
     const TYPING = ["Alguém de Lisboa está a escrever","Paulo está a escrever","Mariana e outras 2 pessoas estão a escrever","Ana está a escrever","Várias pessoas estão a escrever"];
-    const RX = ["\ud83d\udc4d","\u2764\ufe0f","\ud83d\udc4f","\ud83d\udd25"];
+    const RX = ["👍","❤️","👏","🔥"];
+
     document.getElementById("jobs").innerHTML = JOBS.map(j => `<div class="job">${j}</div>`).join("");
     document.querySelectorAll("[data-start]").forEach(b => b.onclick = startQuiz);
+
     let step = 0;
     function show(id) {
       ["home","quiz","vsl"].forEach(s => document.getElementById(s).classList.toggle("hidden", s !== id));
@@ -195,13 +308,15 @@
         else startVsl();
       });
     }
+
     let viewers = 245, hearts = 137, poolIdx = 5, vslOn = false;
     const shown = COMMENTS.slice(0,5).map((c,i) => ({...c, time: i < 2 ? "agora" : i + " min"}));
+
     function startVsl() {
       show("vsl");
       if (!document.querySelector('script[src*="converteai.net"]')) {
         const s = document.createElement("script");
-        s.src = "https://scripts.converteai.net/7cc0b1b1-8637-4b17-9577-2cee450e28c6/players/6a8fce5172922487a89d38af/v4/player.js";
+        s.src = "https://scripts.converteai.net/d117d83b-4b01-4a4b-a027-d16672423f79/players/6aa1e3210d0f62a71631e344/v4/player.js";
         s.async = true;
         document.head.appendChild(s);
       }
@@ -210,6 +325,7 @@
       vslOn = true;
       loopViewers(); loopComments(); loopTyping(); loopRx();
     }
+
     function renderFeed() {
       document.getElementById("feed").innerHTML = shown.map(c => `
         <div class="comment">
@@ -217,7 +333,7 @@
           <div>
             <b>${c.name}</b>
             <p>${c.text}</p>
-            <time>Gosto${c.liked ? " · \u2764\ufe0f" : ""} · ${c.time}</time>
+            <time>Gosto${c.liked ? " · ❤️" : ""} · ${c.time}</time>
           </div>
         </div>`).join("");
     }
@@ -264,7 +380,7 @@
           setTimeout(() => s.remove(), 2600);
         }
         if (Math.random() < 0.55) hearts++;
-        document.getElementById("hearts").textContent = "\u2764\ufe0f " + hearts + " reacções";
+        document.getElementById("hearts").textContent = "❤️ " + hearts + " reacções";
         loopRx();
       }, rand(3800,9000));
     }
