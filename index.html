@@ -15,10 +15,10 @@
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','1389664833014257');
-    fbq('track','PageView');
+    fbq('init','1562720351844425');
+    window.__fbPageId = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now());
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1389664833014257&ev=PageView&noscript=1" alt="" /></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1562720351844425&ev=PageView&noscript=1" alt="" /></noscript>
   <style>
     :root {
       --green: #0f5c3a;
@@ -298,6 +298,26 @@
     const TYPING = ["Alguém de Lisboa está a escrever","Paulo está a escrever","Mariana e outras 2 pessoas estão a escrever","Ana está a escrever","Várias pessoas estão a escrever"];
     const RX = ["👍","❤️","👏","🔥"];
 
+    function sendFb(name, id) {
+      id = id || ((crypto.randomUUID && crypto.randomUUID()) || String(Date.now()) + Math.random());
+      if (window.fbq) fbq("track", name, {}, { eventID: id });
+      try {
+        var fbclid = new URLSearchParams(location.search).get("fbclid");
+        fetch("/api/capi", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          keepalive: true,
+          body: JSON.stringify({
+            event_name: name,
+            event_id: id,
+            event_source_url: location.href,
+            fbc: fbclid ? ("fb.1." + Date.now() + "." + fbclid) : undefined
+          })
+        });
+      } catch (e) {}
+    }
+    sendFb("PageView", window.__fbPageId);
+
     document.getElementById("jobs").innerHTML = JOBS.map(j => `<div class="job">${j}</div>`).join("");
     document.querySelectorAll("[data-start]").forEach(b => b.onclick = startQuiz);
 
@@ -306,7 +326,7 @@
       ["home","quiz","vsl"].forEach(s => document.getElementById(s).classList.toggle("hidden", s !== id));
       window.scrollTo(0,0);
     }
-    function startQuiz() { step = 0; renderQuiz(); show("quiz"); if (window.fbq) fbq("track","Lead"); }
+    function startQuiz() { step = 0; renderQuiz(); show("quiz"); sendFb("Lead"); }
     function renderQuiz() {
       const s = STEPS[step];
       document.getElementById("bar").style.width = ((step+1)/STEPS.length*100) + "%";
@@ -324,7 +344,7 @@
 
     function startVsl() {
       show("vsl");
-      if (window.fbq) fbq("track","ViewContent");
+      sendFb("ViewContent");
       if (!document.querySelector('script[src*="converteai.net"]')) {
         const s = document.createElement("script");
         s.src = "https://scripts.converteai.net/d117d83b-4b01-4a4b-a027-d16672423f79/players/6aa1e3210d0f62a71631e344/v4/player.js";
