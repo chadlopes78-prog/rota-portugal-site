@@ -1,3 +1,4 @@
+// env: FB_PIXEL_ID + FB_ACCESS_TOKEN
 const ALLOWED = new Set(["PageView", "Lead", "ViewContent"]);
 
 function readCookie(header, name) {
